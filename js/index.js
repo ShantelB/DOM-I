@@ -44,8 +44,25 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 const navBar = document.querySelectorAll("header nav a");
 for (i = 0; i < navBar.length; i++){
   navBar[i].textContent = siteContent.nav [`nav-item-${i + 1}`];
+  navBar[i].style.color = "green";
 }
- 
+
+document.querySelector("nav") // Selects the nav
+.appendChild(                   // Add element to nav
+  document.createElement("a")   // creating the a inside the nav
+    .appendChild(             // adding node to a
+      document.createTextNode("Hi") // text node being addedinto the a tag
+    )
+  )
+
+  document.querySelector("nav") // Selects the nav
+  .prepend(                   // Add element to nav
+    document.createElement("a")   // creating the a inside the nav
+      .appendChild(             // adding node to a
+        document.createTextNode("Bye") // text node being addedinto the a tag
+      )
+    )  
+
 let snippet = document.getElementById("cta-img");
 snippet.setAttribute('src', siteContent["cta"]["img-src"]);
  
