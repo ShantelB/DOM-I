@@ -51,7 +51,7 @@ document.querySelector("nav") // Selects the nav
 .appendChild(                   // Add element to nav
   document.createElement("a")   // creating the a inside the nav
     .appendChild(             // adding node to a
-      document.createTextNode("Hi") // text node being addedinto the a tag
+      document.createTextNode("Bye") // text node being addedinto the a tag
     )
   )
 
@@ -59,7 +59,7 @@ document.querySelector("nav") // Selects the nav
   .prepend(                   // Add element to nav
     document.createElement("a")   // creating the a inside the nav
       .appendChild(             // adding node to a
-        document.createTextNode("Bye") // text node being addedinto the a tag
+        document.createTextNode("Hi") // text node being addedinto the a tag
       )
     )  
 
@@ -70,7 +70,11 @@ let middle = document.getElementById("middle-img");
 middle.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
  
 let heading = document.querySelector(".cta h1");
-heading.textContent = siteContent["cta"].h1;
+heading.textContent = siteContent.cta.h1;
+heading.style.flexDirection = "column";
+heading.style.justifyContent = "center";
+heading.style.textAlign = "center";
+heading.innerHTML = siteContent.cta.h1.replace(/ /g, '<br>');
 
 
 let btn = document.querySelector(".cta button");
